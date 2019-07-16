@@ -18,6 +18,7 @@ public class Main {
     }
 
     private static void task1() {
+        System.out.printf("\nTask 1:\n");
         int[] a = new int[35];
         int sum = 0;
         Random random = new Random();
@@ -31,6 +32,7 @@ public class Main {
     }
 
     private static void task2() {
+        System.out.printf("\nTask 2:\n");
         int[] a = new int[10];
         int sum = 0;
         Random random = new Random();
@@ -42,6 +44,7 @@ public class Main {
     }
 
     private static void task3() {
+        System.out.printf("\nTask 3:\n");
         int[] a = new int[18];
         int obz = 0, kor = 0, pro = 0;
         Random random = new Random();
@@ -62,6 +65,7 @@ public class Main {
     }
 
     private static void task4() {
+        System.out.printf("\nTask 4:\n");
         Random random = new Random();
         int[] a = new int[50];
         int cur = 0, max = 0;
@@ -78,6 +82,7 @@ public class Main {
     }
 
     private static void task5() {
+        System.out.printf("\nTask 5:\n");
         int[] a = new int[50];
         Random random = new Random();
         for (int i = 0; i < a.length; i++) {
@@ -94,6 +99,7 @@ public class Main {
     }
 
     private static void task6() {
+        System.out.printf("\nTask 6:\n");
         int[] a = new int[50];
         int b = 0, c = 0;
         Random random = new Random();
@@ -119,25 +125,35 @@ public class Main {
 
 
     private static void task7() {
-        int[] a = new int[50];
-        int b=0;
+        System.out.printf("\nTask 7:\n");
+        int[] a = new int[10];
+        int n = a.length - 1;
         Random random = new Random();
-        for (int i = 0; i < a.length; i++) {
-            a[i] = random.nextInt(50);
-        }
-        System.out.println(Arrays.toString(a));
-        for (int i=0; i< a.length; i++) {
-            b = a[i];
-            if (b != 0) {
-                for (int j = 0; j < a.length; j++) {
-                    if (b == a[j]) a[j] = 0;
+        for (int i = 0; i < a.length; i++)
+            a[i] = random.nextInt(6);
+
+        System.out.println("Before (" + n + "): " + Arrays.toString(a));
+
+        for (int i = 0; i <= n - 1; i++) {
+            if (i < n - 1) {
+                for (int k = i + 1; k < n; k++) {
+                    //System.out.println(k + " " + i);
+                    if (a[i] == a[k]) {
+                        for (int j = k; j <= n - 1; j++) {
+                            a[j] = a[j + 1];
+                        }
+                        a[n] = 0;
+                        n--;
+                        k--;
+                    }
                 }
             }
         }
-        System.out.println(Arrays.toString(a));
+        System.out.println("After   (" + n + "):" + Arrays.toString(a));
     }
 
     private static void task8() {
+        System.out.printf("\nTask 8:\n");
         Random random = new Random();
         int[] a = new int[50];
         int b = 30, c = 10, d = 20;
@@ -154,6 +170,7 @@ public class Main {
     }
 
     private static void task9() {
+        System.out.printf("\nTask 9:\n");
         Random random = new Random();
         int[] a = new int[50];
         int b = 30, c = 10, d = 20;
